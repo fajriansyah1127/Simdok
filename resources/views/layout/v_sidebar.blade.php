@@ -42,7 +42,7 @@
         </li>
         
         <li class="nav-item">
-          <a href="/home" class="nav-link">
+          <a href="/riwayat" class="nav-link">
             <i class="nav-icon fas fa-history"></i>
             <p>Riwayat Dokumen </p>
           </a>

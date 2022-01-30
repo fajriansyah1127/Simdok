@@ -38,6 +38,28 @@
               <a href="/download/{{$data->File}}" class="btn btn-primary btn-sm">Unduh File</a>
               <a href="/edit_dokumen/{{$data->id}}"class="btn btn-sm btn-warning">Edit</a>
               <a href="/hapus/{{$data->id}}"class="btn btn-sm btn-danger">Delete</a>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop{{$data->id}}">
+                Delete
+              </button>
+              <div class="modal fade" id="staticBackdrop{{$data->id}}" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content bg-danger">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">{{ $data->Nama }}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Ingin menghapus ?
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                      <a href="/hapus/{{$data->id}} " class="btn btn-outline-light">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>@endforeach
       </tbody>

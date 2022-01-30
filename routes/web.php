@@ -44,6 +44,9 @@ Route::get('/survey', function () {
 Route::get('/survey2', function () {
     return view('survey2');
 });
+Route::get('/riwayat', function () {
+    return view('riwayat');
+});
 // Route::get('/admin&user', function () {
 //     return view('/admin&user');
 // });
