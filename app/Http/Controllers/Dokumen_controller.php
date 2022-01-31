@@ -8,6 +8,7 @@ use App\Models\asuransi_model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
+
 class Dokumen_controller extends Controller
 {
     public function __construct()
@@ -130,8 +131,13 @@ class Dokumen_controller extends Controller
             'Tanggal'=> Request ()->tanggal_Upload,
             'File'=> $filename,
         ];
+        $riwayat = [
+            'Nama'=> 'sesuai user',
+            'Aktivitas'=> 'MEMBUAT DOKUMEN DIANYA'
+        ];
         
         $this->model->add_dokumen($data);
+        $this->model->riwayat($riwayat);
         return redirect()->route('dokumen')->with('pesan','Data Berhasil Di Tambahkan !!!');
     }
 
@@ -173,7 +179,11 @@ class Dokumen_controller extends Controller
             'Tanggal'=> Request ()->tanggal_Upload,
             'File'=> $filename,
         ];
-        
+        $riwayat = [
+            'Nama'=> 'sesuai user',
+            'Aktivitas'=> 'baruin DOKUMEN DIANYA'
+        ];
+        $this->model->riwayat($riwayat);
         $this->model->edit($id,$data);
         return redirect()->route('edit')->with('pesan','Data Berhasil Di Edit !!!');
     }
@@ -184,6 +194,11 @@ class Dokumen_controller extends Controller
         if ($dokumen->File <> "") {
             unlink(public_path('file').'/'.$dokumen->File);
         }
+        $riwayat = [
+            'Nama'=> 'sesuai user',
+            'Aktivitas'=> 'hapusin  DOKUMEN DIANYA'
+        ];
+        $this->model->riwayat($riwayat);
         $this->model->hapus($id);
         return redirect()->route('edit')->with('pesan','Data Berhasil Di Hapus !!!');
     }

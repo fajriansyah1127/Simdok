@@ -20,7 +20,7 @@ class user_controller extends Controller
         $data = [
             'pengguna' => $this -> model -> detailData($id),
         ];
-        return view('detail_admin&user',$data);
+        return view('user.detail_admin&user',$data);
     }
 
     public function data()
@@ -28,7 +28,7 @@ class user_controller extends Controller
         $data = [
             'pengguna' => $this -> model -> alldata(),
         ];
-        return view('admin&user',$data);
+        return view('user.admin&user',$data);
     }
 
     public function create()
@@ -36,7 +36,7 @@ class user_controller extends Controller
         // $data = [
         //     'datas' => $this -> Data -> alldata(),
         // ];
-        return view('add_admin&user');
+        return view('user.add_admin&user');
     }
 
     public function create_user()
@@ -76,7 +76,7 @@ class user_controller extends Controller
         $data = [
             'pengguna' => $this -> model -> detailData($id),
         ];
-        return view('edit_admin&user',$data);
+        return view('user.edit_admin&user',$data);
     }
 
     public function update($id)

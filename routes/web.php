@@ -5,7 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Dokumen_controller;
 use App\Http\Controllers\Asuransi_controller;
 use App\Http\Controllers\user_controller;
-
+use App\Http\Controllers\riwayat;
+use App\Http\Controllers\DokumenController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,9 +45,8 @@ Route::get('/survey', function () {
 Route::get('/survey2', function () {
     return view('survey2');
 });
-Route::get('/riwayat', function () {
-    return view('riwayat');
-});
+Route::get('/riwayat', [riwayat::class,'riwayat']);
+
 // Route::get('/admin&user', function () {
 //     return view('/admin&user');
 // });
@@ -95,6 +95,7 @@ Route::get('/download/{id}',[Dokumen_controller::class,'download']);
 Route::get('/edit_dokumen/{id}',[Dokumen_controller::class,'edit']); 
 Route::post('/update/dokumen/{id}',[Dokumen_controller::class,'update']);
 Route::get('/hapus/{id}',[Dokumen_controller::class,'delete']);
+Route::resource('/dokumen', DokumenController::class);
 /////ASURANSI//////
 Route::get('/asuransi',[Asuransi_controller::class,'tampilan_asuransi'])->name('asuransi');
 Route::get('/add_asuransi',[Asuransi_controller::class,'tambah_asuransi']);

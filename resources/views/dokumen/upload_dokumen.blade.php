@@ -27,8 +27,8 @@
 <!-- membuat formnya -->
 <!-- bagian judul -->
 
-          <form action="/add_dokumen" method="POST" enctype="multipart/form-data">
-            @csrf
+          <form action="{{ route('dokumen.store') }}" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
               <div class="form-group row">
                   <label for="Judul" class="col-sm-2 col-form-label">Nama Nasabah</label>
                   <div class="col-sm-10">

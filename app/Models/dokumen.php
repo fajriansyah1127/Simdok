@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class dokumen extends Model
 {
-    use HasFactory;
+    protected $table = "Dokumen";
+
+    protected $fillable = ["Nama", "Id_asuransi", "Nomor","Tanggal","File"];
 }

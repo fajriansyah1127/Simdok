@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Dokumen_model extends Model
 {
+
     public function id_asuransi()
     {
         return DB::table('asuransi')->get();
@@ -21,6 +22,11 @@ class Dokumen_model extends Model
     public function edit_dokumen($id)
     {
         return DB::table('dokumen')->where('id',$id)->first ();
+    }
+
+    public function riwayat($riwayat)
+    {
+        return DB::table('riwayat')->insert($riwayat);
     }
 
     public function edit($id,$data)

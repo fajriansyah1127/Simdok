@@ -22,7 +22,7 @@
                  </div>
                  <div class="card-body">
                    <h5 class="card-title text-dark"><b>UPLOAD DOKUMEN</b></h5><br><br>
-                   <a href="/upload" class="btn btn-dark">Lihat Disini</a>
+                   <a href="/dokumen/create" class="btn btn-dark">Lihat Disini</a>
                  </div>
            </div>
            

@@ -27,11 +27,14 @@
         
       </thead>
       <tbody>
+        <?php $no=1; ?>  
+        @foreach ( $riwayat as $data )
           <tr>
-            <td>1</td>
-            <td>wdaw</td>
-            <td>dwa</td>
-            <td>9 juli 2000</td>
+            <td>{{ $no++}}</td>
+            <td>{{ $data->Nama }}</td>
+            <td>{{ $data->Aktivitas }}</td>
+            <td>{{ $data->created_at }}</td>
+            @endforeach
             
           </tr>
       </tbody>
