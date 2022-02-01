@@ -26,12 +26,13 @@
 
 <!-- membuat formnya -->
 <!-- bagian judul -->
-          <form action="/update/dokumen/{{$dokumen->id}}" method="POST" enctype="multipart/form-data">
-            @csrf 
+          <form action="{{ route('dokumen.update', $datas->id) }}" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            @method('PUT') 
               <div class="form-group row">
                   <label for="Judul" class="col-sm-2 col-form-label">Nama Nasabah</label>
                   <div class="col-sm-10">
-                       <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ $dokumen->Nama }}"required placeholder="Masukkan Nama pengupload">
+                       <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ $datas->Nama }}"required placeholder="Masukkan Nama pengupload">
                   </div>
               </div>
 <!-- bagian unit -->
@@ -52,7 +53,7 @@
                 <div class="form-group row">
                   <label for="Nomor" class="col-sm-2 col-form-label">Nomor Surat</label>
                   <div class="col-sm-10">
-                    <input type="text" id="Nomor" name="Nomor" value="{{ $dokumen->Nomor }}"required    class="form-control" placeholder="Contoh 0542"  required>
+                    <input type="text" id="Nomor" name="Nomor" value="{{ $datas->Nomor }}"required    class="form-control" placeholder="Contoh 0542"  required>
                   </div>
                 </div>
                
@@ -68,7 +69,7 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Masukkan File</label>
-                            <input type="file" name="File" class="form-control-file">
+                            <input type="file" name="File" value="{{ $datas->File }}" class="form-control-file">
                                                     </div>
                     </form>
                     <!-- bagian submit -->

@@ -74,7 +74,7 @@ Route::get('/riwayat', [riwayat::class,'riwayat']);
 // Route::get('/dokumen', function () {
 //     return view('/dokumen');
 // });
-Route::get('/admin_kumpulan_arsip',[HomeController::class,'admin_kumpulan']);
+Route::get('/admin_kumpulan_arsip',[HomeController::class,'admin_kumpulan'])->name('dokumen');
 // Route::get('/upload',[HomeController::class,'admin_upload']);
 Route::get('/kumpulan_arsip',[HomeController::class,'user_kumpulan']);
 Route::get('/user_upload', [HomeController::class,'user_upload']);
@@ -88,12 +88,12 @@ Route::post('/admin_upload_file', [HomeController::class,'add']);
 
 /////DOKUMEN///////
 Route::get('/dokumen',[Dokumen_controller::class,'kumpulan_dokumen'])->name('edit');
-Route::get('/upload',[Dokumen_controller::class,'upload'])->name('dokumen');
+// Route::get('/upload',[Dokumen_controller::class,'upload'])->name('dokumen');
 Route::post('/add_dokumen',[Dokumen_controller::class,'tambah_dokumen']);
 // Route::get('/download/{id}',[Dokumen::class,'download']);
 Route::get('/download/{id}',[Dokumen_controller::class,'download']);
-Route::get('/edit_dokumen/{id}',[Dokumen_controller::class,'edit']); 
-Route::post('/update/dokumen/{id}',[Dokumen_controller::class,'update']);
+// Route::get('/edit_dokumen/{id}',[Dokumen_controller::class,'edit']); 
+// Route::post('/update/dokumen/{id}',[Dokumen_controller::class,'update']);
 Route::get('/hapus/{id}',[Dokumen_controller::class,'delete']);
 Route::resource('/dokumen', DokumenController::class);
 /////ASURANSI//////

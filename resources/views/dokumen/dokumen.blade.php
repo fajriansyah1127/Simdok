@@ -1,5 +1,6 @@
 @extends('layout.layout')
 @section('content')
+@include('sweetalert::alert')
 <div class="content-wrapper">
   @if(session('pesan'))
   <div class="alert alert-success alert-dismissible">
@@ -36,7 +37,7 @@
             <td>
               {{-- <a href="{{ route('download', $data->File) }}"class="btn btn-sm btn-success">Download</a> --}}
               <a href="/download/{{$data->File}}" class="btn btn-primary btn-sm">Unduh File</a>
-              <a href="/edit_dokumen/{{$data->id}}"class="btn btn-sm btn-warning">Edit</a>
+              <a href="{{route('dokumen.edit',$data->id)}}"class="btn btn-sm btn-warning">Edit</a>
               <a href="/hapus/{{$data->id}}"class="btn btn-sm btn-danger">Delete</a>
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop{{$data->id}}">
                 Delete

@@ -1,5 +1,6 @@
 @extends('layout.layout')
 @section('content')
+@include('sweetalert::alert')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
   @if(session('pesan'))

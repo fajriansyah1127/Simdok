@@ -33,7 +33,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="/upload" class="nav-link">
+          <a href="/dokumen/create" class="nav-link">
             <i class="nav-icon fas fa-upload"></i>
             <p>
               Upload Dokumen
